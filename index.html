@@ -8,64 +8,103 @@
 </head>
 <body>
 
-
 <!-- Hero Section -->
 <header class="hero">
-<div class="hero-content">
-<img src="img/intel-header-logo.svg" class="intel-logo" alt="Intel Logo" />
-<h1>Sustainability Through the Ages</h1>
-<div class="hero-divider"></div>
-<p>
-Explore Intel's journey through time, discovering how our commitment
-to innovation has shaped a more sustainable future for technology
-and our planet.
-</p>
-</div>
+  <div class="hero-content">
+    <img src="intel-header-logo.svg" class="intel-logo" alt="Intel Logo" />
+    <h1>Sustainability Through the Ages</h1>
+    <div class="hero-divider"></div>
+    <p>
+      Explore Intel's journey through time, discovering how our commitment
+      to innovation has shaped a more sustainable future for technology
+      and our planet.
+    </p>
+  </div>
 </header>
 
-
 <p class="caption">Scroll to view timeline | Hover over cards to learn more!</p>
-
 
 <!-- Timeline Section -->
 <section class="timeline-container">
 
+  <div class="timeline-card" tabindex="0">
+    <img src="1.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>1968</h2>
+    <h3>Intel Founded</h3>
+    <p>
+      Robert Noyce and Gordon Moore rename the newly formed company
+      NM Electronics to Intel Corporation, laying the foundation for
+      decades of technological innovation.
+    </p>
+  </div>
 
-<div class="timeline-card" tabindex="0">
-<h2>1968</h2>
-<h3>Intel Founded</h3>
-<p>
-Robert Noyce and Gordon Moore rename the newly formed company
-NM Electronics to Intel Corporation, laying the foundation for
-decades of technological innovation.
-</p>
-</div>
+  <div class="timeline-card" tabindex="0">
+    <img src="2.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>1971</h2>
+    <h3>First Microprocessor</h3>
+    <p>
+      Intel debuts the 4004, the world's first commercial microprocessor,
+      igniting the microprocessor revolution.
+    </p>
+  </div>
 
+  <div class="timeline-card" tabindex="0">
+    <img src="3.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>1978</h2>
+    <h3>8086 Processor</h3>
+    <p>
+      Launch of the 8086 processor, establishing the x86 architecture
+      that drives countless PCs and servers today.
+    </p>
+  </div>
 
-<div class="timeline-card" tabindex="0">
-<h2>1971</h2>
-<h3>First Microprocessor</h3>
-<p>
-Intel debuts the 4004, the world's first commercial microprocessor,
-igniting the microprocessor revolution.
-</p>
-</div>
+  <div class="timeline-card" tabindex="0">
+    <img src="4.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>1985</h2>
+    <h3>401 Processor</h3>
+    <p>
+      Intel introduces the 386 processor with 32-bit architecture,
+      ushering in a new era of multitasking.
+    </p>
+  </div>
 
+   <div class="timeline-card" tabindex="0">
+    <img src="5.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>1999</h2>
+    <h3>433 Processor</h3>
+    <p>
+      Intel introduces the 386 processor with 32-bit architecture,
+      ushering in a new era of multitasking.
+    </p>
+  </div>
 
-<div class="timeline-card" tabindex="0">
-<h2>1978</h2>
-<h3>8086 Processor</h3>
-<p>
-Launch of the 8086 processor, establishing the x86 architecture
-that drives countless PCs and servers today.
-</p>
-</div>
+   <div class="timeline-card" tabindex="0">
+    <img src="6.jpg" alt="Intel 1985" class="card-image"/>
+    <h2>2005</h2>
+    <h3>490 Processor</h3>
+    <p>
+      Intel introduces the 386 processor with 32-bit architecture,
+      ushering in a new era of multitasking.
+    </p>
+  </div>
 
+</section>
+<script>
+  const cards = document.querySelectorAll('.timeline-card');
 
-<div class="timeline-card" tabindex="0">
-<h2>1985</h2>
-<h3>386 Processor</h3>
-<p>
-Intel introduces the 386 processor with 32-bit architecture,
-ushering in a new era of multitasking.
+  const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    // If card is in center (50% visible), make it bigger
+    if (entry.intersectionRatio > 0.5) {
+      entry.target.style.transform = 'scale(1)'; // main card
+    } else {
+      entry.target.style.transform = 'scale(0.85)'; // smaller cards
+    }
+  });
+}, { threshold: [0.5] });
+
+cards.forEach(card => observer.observe(card));
+
+</script>
+</body>
 </html>
