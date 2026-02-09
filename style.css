@@ -88,7 +88,9 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   padding: 20px;
+  width: 250px; /* fixed width */
   min-width: 250px;
+  max-width: 250px; /* prevent stretching */
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -98,19 +100,13 @@ body {
   scroll-snap-align: center;
   border-radius: 8px;
   flex-shrink: 0;
-  transform: scale(0.85); /* default smaller for side cards */
 }
 
 /* Hover / focus: main card pops */
 .timeline-card:hover,
 .timeline-card:focus {
-  transform: scale(1); /* main card bigger */
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Optional: first card starts as main card */
-.timeline-container .timeline-card:first-child {
-  transform: scale(1);
 }
 
 /* Card headings */
@@ -167,9 +163,10 @@ body {
   }
 
   .timeline-card {
+    width: 100%; /* full width on mobile */
     min-width: 100%;
     height: auto;
-    transform: scale(1); /* all cards full size on mobile */
+    transform: scale(1);
   }
 
   .timeline-card p {
@@ -181,3 +178,4 @@ body {
 
   .caption { margin-top: 0; margin-bottom: 20px; }
 }
+
